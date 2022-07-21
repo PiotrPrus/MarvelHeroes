@@ -2,16 +2,18 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("kotlinx-serialization")
+    id("com.squareup.sqldelight")
 }
 
 android {
     namespace = "com.piotrprus.marvelheroes"
-    compileSdk = 32
+    compileSdk = Versions.Android.compileSdk
 
     defaultConfig {
         applicationId = "com.piotrprus.marvelheroes"
-        minSdk = 23
-        targetSdk = 32
+        minSdk = Versions.Android.minSdk
+        targetSdk = Versions.Android.targetSdk
         versionCode = 1
         versionName = "1.0"
 
@@ -36,22 +38,56 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = Versions.AndroidX.compose
     }
 }
 
 dependencies {
+    implementation(Deps.AndroidX.coreKtx)
+    implementation(Deps.Google.material)
+    implementation(Deps.AndroidX.Compose.ui)
+    implementation(Deps.AndroidX.Compose.material)
+    implementation(Deps.AndroidX.Compose.materialIcons)
+    implementation(Deps.AndroidX.Compose.materialIconsExtended)
+    implementation(Deps.AndroidX.lifecycleRuntime)
+    implementation(Deps.AndroidX.activityCompose)
+    debugImplementation(Deps.AndroidX.Compose.tooling)
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.3.1")
-    implementation("androidx.compose.ui:ui:1.1.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.1.1")
-    implementation("androidx.compose.material:material:1.1.1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.1.1")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.1.1")
+    implementation(Deps.coil)
+
+    implementation(Deps.Accompanist.placeholder)
+    implementation(Deps.Accompanist.navigationMaterial)
+    implementation(Deps.Accompanist.navigationAnimation)
+
+    implementation(Deps.AndroidX.navigationCompose)
+
+    implementation(Deps.KotlinX.Coroutines.core)
+    implementation(Deps.KotlinX.Coroutines.android)
+
+    //KTOR
+    implementation(Deps.Ktor.android)
+    implementation(Deps.Ktor.core)
+    implementation(Deps.Ktor.json)
+    implementation(Deps.Ktor.logging)
+    implementation(Deps.Ktor.serialization)
+
+    implementation(Deps.KotlinX.Serialization.core)
+    implementation(Deps.KotlinX.Serialization.json)
+
+    //KOIN - DI
+    implementation(Deps.Koin.core)
+    implementation(Deps.Koin.android)
+    implementation(Deps.Koin.compose)
+
+    implementation(Deps.timber)
+
+    testImplementation(Deps.junit)
+    androidTestImplementation(Deps.AndroidX.Test.junit)
+    androidTestImplementation(Deps.AndroidX.Compose.test)
+}
+
+sqldelight {
+    database("HeroesDb") {
+        packageName = "com.piotrprus.marvelheroes.db"
+    }
 }
