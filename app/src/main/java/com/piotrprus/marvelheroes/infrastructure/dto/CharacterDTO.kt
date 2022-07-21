@@ -13,4 +13,6 @@ data class CharacterDTO(
 data class ThumbnailDTO(
     val path: String,
     val extension: String
-)
+) {
+    val url = "$path.$extension"
+}
