@@ -1,3 +1,5 @@
+import java.util.*
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -5,6 +7,9 @@ plugins {
     id("kotlinx-serialization")
     id("com.squareup.sqldelight")
 }
+
+val properties = Properties()
+properties.load(project.rootProject.file("local.properties").reader())
 
 android {
     namespace = "com.piotrprus.marvelheroes"
@@ -18,6 +23,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "MARVEL_API_KEY", properties.getProperty("MARVEL_API_KEY"))
     }
 
     buildTypes {
