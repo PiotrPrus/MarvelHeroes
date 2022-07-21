@@ -38,6 +38,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -46,7 +47,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.AndroidX.compose
+        kotlinCompilerExtensionVersion = "1.2.0"
     }
 }
 
@@ -90,9 +91,14 @@ dependencies {
 
     implementation(Deps.timber)
 
-    testImplementation(Deps.junit)
     androidTestImplementation(Deps.AndroidX.Test.junit)
     androidTestImplementation(Deps.AndroidX.Compose.test)
+    testImplementation(kotlin("test-common"))
+    testImplementation(kotlin("test-annotations-common"))
+
+    testImplementation(Deps.Koin.test)
+    testImplementation(Deps.Ktor.mock)
+    testImplementation(Deps.KotlinX.Coroutines.test)
 }
 
 sqldelight {

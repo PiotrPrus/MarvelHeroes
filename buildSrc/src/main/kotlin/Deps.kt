@@ -1,5 +1,5 @@
 object Versions {
-    const val kotlin = "1.6.21"
+    const val kotlin = "1.7.0"
 
     object Android {
         const val gradle = "7.1.3"
@@ -140,6 +140,7 @@ object Deps {
             const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.KotlinX.coroutines}"
             const val playServices =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.KotlinX.coroutines}"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.KotlinX.coroutines}"
         }
 
         object Serialization {
