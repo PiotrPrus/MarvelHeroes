@@ -25,6 +25,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "MARVEL_API_KEY", properties.getProperty("MARVEL_API_KEY"))
+        buildConfigField("String", "MARVEL_PRIVATE_KEY", properties.getProperty("MARVEL_PRIVATE_KEY"))
     }
 
     buildTypes {
@@ -77,6 +78,7 @@ dependencies {
     implementation(Deps.Ktor.json)
     implementation(Deps.Ktor.logging)
     implementation(Deps.Ktor.serialization)
+    implementation(Deps.Ktor.contentNegotiation)
 
     implementation(Deps.KotlinX.Serialization.core)
     implementation(Deps.KotlinX.Serialization.json)
