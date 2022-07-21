@@ -58,6 +58,7 @@ dependencies {
     implementation(Deps.AndroidX.Compose.material)
     implementation(Deps.AndroidX.Compose.materialIcons)
     implementation(Deps.AndroidX.Compose.materialIconsExtended)
+    implementation(Deps.AndroidX.Compose.paging)
     implementation(Deps.AndroidX.lifecycleRuntime)
     implementation(Deps.AndroidX.activityCompose)
     debugImplementation(Deps.AndroidX.Compose.tooling)

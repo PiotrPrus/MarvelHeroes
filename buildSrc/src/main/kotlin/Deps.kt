@@ -80,6 +80,7 @@ object Deps {
             const val ui = "androidx.compose.ui:ui:${Versions.AndroidX.compose}"
             const val constraintLayout =
                 "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha07"
+            const val paging = "androidx.paging:paging-compose:1.0.0-alpha15"
         }
 
         object Test {
