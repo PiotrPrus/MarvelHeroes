@@ -25,8 +25,10 @@ import coil.request.ImageRequest
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.shimmer
 import com.google.accompanist.placeholder.placeholder
-import com.piotrprus.marvelheroes.feature.home.HomeViewModel
 import com.piotrprus.marvelheroes.data.model.CharacterItem
+import com.piotrprus.marvelheroes.feature.home.HomeViewModel
+import com.piotrprus.marvelheroes.ui.MainScreen
+import com.piotrprus.marvelheroes.ui.Screen
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
@@ -45,7 +47,11 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                 .aspectRatio(1f)
                 .fillMaxWidth()
             lazyItems[key]?.let {
-                HeroCard(modifier = cardModifier, hero = it, onClick = {})
+                HeroCard(modifier = cardModifier, hero = it, onClick = { heroId ->
+                    navController.navigate(
+                        Screen.HeroDetail.createRoute(MainScreen.Home, heroId)
+                    )
+                })
             } ?: PlaceholderHeroCard(cardModifier)
         }
     }

@@ -20,9 +20,11 @@ import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.piotrprus.marvelheroes.ui.MainScreen
 import com.piotrprus.marvelheroes.ui.Screen
+import com.piotrprus.marvelheroes.ui.detail.DetailScreen
 import com.piotrprus.marvelheroes.ui.home.HomeScreen
 import com.piotrprus.marvelheroes.ui.theme.MarvelHeroesTheme
 import org.koin.androidx.compose.getViewModel
+import timber.log.Timber
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,6 +84,18 @@ fun HeroesApp() {
             ) {
                 composable(route = Screen.Home.createRoute(MainScreen.Home)) {
                     HomeScreen(viewModel = getViewModel(), navController = navController)
+                }
+                composable(
+                    route = Screen.HeroDetail.createRoute(MainScreen.Home),
+                    arguments = Screen.HeroDetail.arguments
+                ) { navBackStackEntry ->
+                    Screen.HeroDetail.parameters(navBackStackEntry.arguments)
+                        ?.let { parametersHolder ->
+                            DetailScreen(
+                                viewModel = getViewModel { parametersHolder },
+                                navController = navController
+                            )
+                        } ?: Timber.w("Cannot navigate to hero detail screen")
                 }
             }
             navigation(
