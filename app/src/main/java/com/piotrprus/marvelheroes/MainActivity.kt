@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalAnimationApi::class, ExperimentalAnimationApi::class)
+@file:OptIn(ExperimentalAnimationApi::class)
 
 package com.piotrprus.marvelheroes
 
