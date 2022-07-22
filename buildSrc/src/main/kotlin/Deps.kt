@@ -46,7 +46,7 @@ object Deps {
     const val junit = "junit:junit:${Versions.junit}"
     const val playServicesLocation = "com.google.android.gms:play-services-location:${Versions.playServicesLocation}"
     const val turbine = "app.cash.turbine:turbine:${Versions.turbine}"
-    const val coil = "io.coil-kt:coil-compose:1.3.2"
+    const val coil = "io.coil-kt:coil-compose:2.1.0"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val jodaTime = "joda-time:joda-time:2.10.10"
     const val mokoParcelize = "dev.icerock.moko:parcelize:0.8.0"
