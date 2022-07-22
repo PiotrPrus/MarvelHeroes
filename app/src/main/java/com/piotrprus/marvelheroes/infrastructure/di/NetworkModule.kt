@@ -1,6 +1,7 @@
 package com.piotrprus.marvelheroes.infrastructure.di
 
 import com.piotrprus.marvelheroes.BuildConfig
+import com.piotrprus.marvelheroes.infrastructure.api.MarvelApi
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.plugins.*
@@ -26,6 +27,7 @@ val networkModule = module {
         MessageLengthLimitingLogger(delegate = logger)
     }
     single { createHttpClient(get(), get()) }
+    single { MarvelApi(get()) }
 }
 
 fun createJson() = Json { isLenient = true; ignoreUnknownKeys = true; useAlternativeNames = false }
@@ -34,10 +36,12 @@ fun createHttpClient(logger: Logger, json: Json) =
     HttpClient(Android) {
         defaultRequest {
             url {
-                protocol = URLProtocol.HTTP
+                protocol = URLProtocol.HTTPS
                 host = "gateway.marvel.com"
+                val timestamp = System.currentTimeMillis().toString()
+                parameters.append("ts", timestamp)
                 parameters.append("apikey", BuildConfig.MARVEL_API_KEY)
-                parameters.append("hash", generateMD5())
+                parameters.append("hash", generateMD5(timestamp))
             }
         }
         install(ContentNegotiation) { json(json) }
@@ -47,9 +51,9 @@ fun createHttpClient(logger: Logger, json: Json) =
         }
     }
 
-private fun generateMD5(): String {
+private fun generateMD5(timestamp: String): String {
     val text =
-        "${System.currentTimeMillis()}${BuildConfig.MARVEL_PRIVATE_KEY}${BuildConfig.MARVEL_API_KEY}"
+        "$timestamp${BuildConfig.MARVEL_PRIVATE_KEY}${BuildConfig.MARVEL_API_KEY}"
     val crypt = MessageDigest.getInstance("MD5")
     crypt.update(text.toByteArray())
     return BigInteger(1, crypt.digest()).toString(16)
