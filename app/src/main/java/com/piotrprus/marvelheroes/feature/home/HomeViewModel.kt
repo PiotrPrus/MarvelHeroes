@@ -6,7 +6,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.piotrprus.marvelheroes.ui.model.CharacterItem
+import com.piotrprus.marvelheroes.data.model.CharacterItem
 import kotlinx.coroutines.flow.Flow
 
 class HomeViewModel(

@@ -1,8 +1,8 @@
 package com.piotrprus.marvelheroes.infrastructure.repository
 
 import com.piotrprus.marvelheroes.infrastructure.api.MarvelApi
-import com.piotrprus.marvelheroes.ui.model.CharacterItem
-import com.piotrprus.marvelheroes.ui.model.ThumbnailItem
+import com.piotrprus.marvelheroes.data.model.CharacterItem
+import com.piotrprus.marvelheroes.data.model.ThumbnailItem
 
 interface CharactersRepository {
     suspend fun fetchHeroes(offset: Int): List<CharacterItem>

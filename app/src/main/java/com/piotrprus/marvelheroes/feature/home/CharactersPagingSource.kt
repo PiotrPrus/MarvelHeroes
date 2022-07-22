@@ -3,7 +3,7 @@ package com.piotrprus.marvelheroes.feature.home
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.piotrprus.marvelheroes.infrastructure.repository.CharactersRepository
-import com.piotrprus.marvelheroes.ui.model.CharacterItem
+import com.piotrprus.marvelheroes.data.model.CharacterItem
 
 class CharactersSource(private val charactersRepository: CharactersRepository) :
     PagingSource<Int, CharacterItem>() {

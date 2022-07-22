@@ -26,7 +26,7 @@ import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.shimmer
 import com.google.accompanist.placeholder.placeholder
 import com.piotrprus.marvelheroes.feature.home.HomeViewModel
-import com.piotrprus.marvelheroes.ui.model.CharacterItem
+import com.piotrprus.marvelheroes.data.model.CharacterItem
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {

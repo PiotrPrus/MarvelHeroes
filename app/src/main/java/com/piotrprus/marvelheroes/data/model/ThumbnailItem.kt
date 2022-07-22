@@ -1,4 +1,4 @@
-package com.piotrprus.marvelheroes.ui.model
+package com.piotrprus.marvelheroes.data.model
 
 data class ThumbnailItem(
     val id: Int,
