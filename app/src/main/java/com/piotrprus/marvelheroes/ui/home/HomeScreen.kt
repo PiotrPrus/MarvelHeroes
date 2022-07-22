@@ -3,6 +3,7 @@
 package com.piotrprus.marvelheroes.ui.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
@@ -31,13 +33,15 @@ fun HomeScreen(viewModel: HomeViewModel) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 32.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+        verticalArrangement = Arrangement.spacedBy(32.dp),
         modifier = Modifier
             .fillMaxSize()
     ) {
         items(lazyItems.itemCount) { key ->
             val cardModifier = Modifier
                 .animateItemPlacement()
-                .aspectRatio(2 / 3f)
+                .aspectRatio(1f)
                 .fillMaxWidth()
             lazyItems[key]?.let {
                 HeroCard(modifier = cardModifier, hero = it, onClick = {})
@@ -69,9 +73,18 @@ fun HeroCard(modifier: Modifier = Modifier, hero: CharacterItem, onClick: (Long)
                                 color = Color.Black
                             )
                     )
-                }
+                },
+                contentScale = ContentScale.Fit
             )
-            Text(text = hero.name, style = MaterialTheme.typography.button, color = Color.Black)
+            Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(color = MaterialTheme.colors.primary)
+                    .padding(8.dp),
+                text = hero.name,
+                style = MaterialTheme.typography.button,
+                color = MaterialTheme.colors.onPrimary
+            )
         }
     }
 }
