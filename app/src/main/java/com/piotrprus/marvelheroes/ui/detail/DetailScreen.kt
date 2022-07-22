@@ -1,5 +1,6 @@
 package com.piotrprus.marvelheroes.ui.detail
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -44,6 +45,12 @@ fun DetailScreen(viewModel: DetailViewModel, navController: NavController) {
         ) {
             state.info?.let {
                 HeroInfo(hero = it, isFavourite = state.isFavourite)
+            }
+            state.comics?.let {
+                ThumbnailReel(title = "Latest comics", emptyViewDescription = "There are no comics with this hero ☹️", list = it)
+            }
+            state.events?.let {
+                ThumbnailReel(title = "Latest events", emptyViewDescription = "There are no events with this hero ☹️", list = it)
             }
         }
     }
@@ -107,11 +114,62 @@ fun ColumnScope.HeroInfo(hero: CharacterItem, isFavourite: Boolean) {
 }
 
 @Composable
-fun ComicsReel(list: List<ThumbnailItem>) {
-
-}
-
-@Composable
-fun EventsReel(list: List<ThumbnailItem>) {
-
+fun ColumnScope.ThumbnailReel(
+    title: String,
+    emptyViewDescription: String,
+    list: List<ThumbnailItem>
+) {
+    Text(
+        text = title,
+        style = MaterialTheme.typography.caption,
+        modifier = Modifier.padding(horizontal = 12.dp)
+    )
+    Divider(
+        Modifier
+            .fillMaxWidth(0.9f)
+            .align(Alignment.CenterHorizontally)
+    )
+    if (list.isEmpty()) {
+        Text(
+            text = emptyViewDescription,
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(vertical = 24.dp)
+        )
+    } else {
+        val scrollState = rememberScrollState()
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 8.dp)
+                .horizontalScroll(scrollState)
+                .padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            list.forEach { thumbnail ->
+                SubcomposeAsyncImage(
+                    modifier = Modifier
+                        .height(200.dp),
+                    model = ImageRequest.Builder(LocalContext.current)
+                        .data(thumbnail.imageUrl)
+                        .crossfade(true)
+                        .build(), contentDescription = "",
+                    loading = {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxHeight()
+                                .aspectRatio(2 / 3f)
+                                .placeholder(
+                                    true,
+                                    highlight = PlaceholderHighlight.shimmer(),
+                                    color = MaterialTheme.colors.onSurface
+                                )
+                        )
+                    },
+                    contentScale = ContentScale.Fit
+                )
+            }
+        }
+    }
 }
