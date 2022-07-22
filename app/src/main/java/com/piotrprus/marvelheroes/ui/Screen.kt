@@ -40,6 +40,10 @@ sealed class MainScreen(
 sealed class Screen(val route: String) {
     fun createRoute(root: MainScreen) = "${root.mainRoute}/$route"
 
+    object Home : Screen("home")
+    object Favourites : Screen("favourites")
+    object Search : Screen("search")
+
     object HeroDetail :
         Screen("hero/{heroId}") {
         val arguments = listOf(
