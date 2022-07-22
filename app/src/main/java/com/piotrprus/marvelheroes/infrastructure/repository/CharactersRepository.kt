@@ -2,16 +2,55 @@ package com.piotrprus.marvelheroes.infrastructure.repository
 
 import com.piotrprus.marvelheroes.infrastructure.api.MarvelApi
 import com.piotrprus.marvelheroes.ui.model.CharacterItem
+import com.piotrprus.marvelheroes.ui.model.ThumbnailItem
 
 interface CharactersRepository {
     suspend fun fetchHeroes(offset: Int): List<CharacterItem>
+    suspend fun getDetail(heroId: Int): Result<CharacterItem>
+    suspend fun getComics(heroId: Int): Result<List<ThumbnailItem>>
+    suspend fun getEvents(heroId: Int): Result<List<ThumbnailItem>>
 
-    class Impl(private val marvelApi: MarvelApi): CharactersRepository {
+    class Impl(private val marvelApi: MarvelApi) : CharactersRepository {
         override suspend fun fetchHeroes(offset: Int): List<CharacterItem> {
             val response = marvelApi.getHeroes(offset = offset)
             return response.data.results.map {
-                CharacterItem(id = it.id, name = it.name, imageUrl = it.thumbnail.url)
+                CharacterItem(
+                    id = it.id,
+                    name = it.name,
+                    imageUrl = it.thumbnail.url,
+                    description = it.description
+                )
             }
         }
+
+        override suspend fun getDetail(heroId: Int): Result<CharacterItem> =
+            kotlin.runCatching {
+                val results = marvelApi.getHeroDetail(heroId).data.results
+                if (results.isEmpty()) throw Exception("Cannot find hero with id: $heroId")
+                results.first().let {
+                    CharacterItem(
+                        id = it.id,
+                        name = it.name,
+                        imageUrl = it.thumbnail.url,
+                        description = it.description
+                    )
+                }
+            }
+
+        override suspend fun getComics(heroId: Int): Result<List<ThumbnailItem>> =
+            kotlin.runCatching {
+                val results = marvelApi.getHeroComics(heroId).data.results
+                results.mapNotNull { comics ->
+                    comics.thumbnailDTO?.let { ThumbnailItem(id = comics.id, imageUrl = it.url) }
+                }
+            }
+
+        override suspend fun getEvents(heroId: Int): Result<List<ThumbnailItem>> =
+            kotlin.runCatching {
+                val results = marvelApi.getHeroEvents(heroId).data.results
+                results.mapNotNull { event ->
+                    event.thumbnailDTO?.let { ThumbnailItem(id = event.id, imageUrl = it.url) }
+                }
+            }
     }
 }
