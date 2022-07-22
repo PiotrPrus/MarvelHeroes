@@ -8,11 +8,3 @@ data class CharacterDTO(
     val modified: String,
     val thumbnail: ThumbnailDTO
 )
-
-@kotlinx.serialization.Serializable
-data class ThumbnailDTO(
-    val path: String,
-    val extension: String
-) {
-    val url = "$path.$extension".replace("http", "https")
-}
