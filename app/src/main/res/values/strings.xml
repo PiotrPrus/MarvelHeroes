@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Marvel Heroes</string>
+    <string name="main_screen_home">Home</string>
+    <string name="main_screen_favourites">Favourites</string>
+    <string name="main_screen_search">Search</string>
 </resources>
