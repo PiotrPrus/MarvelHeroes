@@ -2,7 +2,9 @@ package com.piotrprus.marvelheroes.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val MarvelRed = Color(0xFFe23636)
+val MarvelRedLight = Color(0xFFff6d61)
+val MarvelRedDark = Color(0xFFa8000f)
+val MarvelGray = Color(0xFF504a4a)
+val MarvelGrayLight = Color(0xFF7c7676)
+val MarvelGrayDark = Color(0xFF282222)

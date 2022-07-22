@@ -79,11 +79,11 @@ fun HeroCard(modifier: Modifier = Modifier, hero: CharacterItem, onClick: (Long)
             Text(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(color = MaterialTheme.colors.primary)
+                    .background(color = MaterialTheme.colors.secondary)
                     .padding(8.dp),
                 text = hero.name,
                 style = MaterialTheme.typography.button,
-                color = MaterialTheme.colors.onPrimary
+                color = MaterialTheme.colors.onSecondary
             )
         }
     }
