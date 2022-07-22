@@ -1,6 +1,7 @@
 package com.piotrprus.marvelheroes
 
 import android.app.Application
+import com.piotrprus.marvelheroes.infrastructure.di.androidModule
 import com.piotrprus.marvelheroes.infrastructure.di.networkModule
 import com.piotrprus.marvelheroes.infrastructure.di.repositoryModule
 import org.koin.android.ext.koin.androidContext
@@ -19,7 +20,7 @@ class MarvelHeroesApp: Application() {
         startKoin {
             androidLogger(Level.ERROR)
             androidContext(this@MarvelHeroesApp)
-            modules(networkModule, repositoryModule)
+            modules(networkModule, repositoryModule, androidModule)
         }
     }
 }
