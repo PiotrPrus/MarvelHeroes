@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
@@ -28,13 +29,13 @@ import com.piotrprus.marvelheroes.feature.home.HomeViewModel
 import com.piotrprus.marvelheroes.ui.model.CharacterItem
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel) {
+fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
     val lazyItems = viewModel.pagedList.collectAsLazyPagingItems()
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 32.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        verticalArrangement = Arrangement.spacedBy(32.dp),
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         modifier = Modifier
             .fillMaxSize()
     ) {
@@ -51,7 +52,7 @@ fun HomeScreen(viewModel: HomeViewModel) {
 }
 
 @Composable
-fun HeroCard(modifier: Modifier = Modifier, hero: CharacterItem, onClick: (Long) -> Unit) {
+fun HeroCard(modifier: Modifier = Modifier, hero: CharacterItem, onClick: (Int) -> Unit) {
     Card(modifier = modifier, elevation = 4.dp) {
         Box(
             modifier = Modifier.clickable { onClick(hero.id) },
