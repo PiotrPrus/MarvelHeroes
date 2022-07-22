@@ -41,7 +41,7 @@ interface CharactersRepository {
             kotlin.runCatching {
                 val results = marvelApi.getHeroComics(heroId).data.results
                 results.mapNotNull { comics ->
-                    comics.thumbnailDTO?.let { ThumbnailItem(id = comics.id, imageUrl = it.url) }
+                    comics.thumbnail?.let { ThumbnailItem(id = comics.id, imageUrl = it.url) }
                 }
             }
 
@@ -49,7 +49,7 @@ interface CharactersRepository {
             kotlin.runCatching {
                 val results = marvelApi.getHeroEvents(heroId).data.results
                 results.mapNotNull { event ->
-                    event.thumbnailDTO?.let { ThumbnailItem(id = event.id, imageUrl = it.url) }
+                    event.thumbnail?.let { ThumbnailItem(id = event.id, imageUrl = it.url) }
                 }
             }
     }

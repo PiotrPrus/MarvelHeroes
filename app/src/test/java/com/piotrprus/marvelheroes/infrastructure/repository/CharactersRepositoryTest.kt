@@ -23,4 +23,20 @@ class CharactersRepositoryTest {
         assertTrue { char.imageUrl.take(4) == "http" }
     }
 
+    @Test
+    fun `Check comics is non-null list of thumbnails`() = runTest {
+        val comics = repository.getComics(23062)
+        assertTrue { comics.isSuccess }
+        val list = comics.getOrThrow()
+        assertEquals(5, list.size)
+    }
+
+    @Test
+    fun `Check events is non-null list of thumbnails`() = runTest {
+        val events = repository.getEvents(23062)
+        assertTrue { events.isSuccess }
+        val list = events.getOrThrow()
+        assertEquals(5, list.size)
+    }
+
 }

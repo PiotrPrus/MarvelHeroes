@@ -16,5 +16,5 @@ data class ComicsResponseData(
 data class ComicsDTO(
     val id: Int,
     val title: String,
-    val thumbnailDTO: ThumbnailDTO? = null
+    val thumbnail: ThumbnailDTO? = null
 )
