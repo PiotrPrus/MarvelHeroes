@@ -16,4 +16,16 @@ class MarvelApiTest {
         val result = marvelApi.getHeroes(20, 0).data.results
         assertEquals(20, result.size)
     }
+
+    @Test
+    fun `Fetch Iron Man comics, limit to 5`() = runTest {
+        val result = marvelApi.getHeroComics(23062).data.results
+        assertEquals(5, result.size)
+    }
+
+    @Test
+    fun `Fetch Iron Man events, limit to 5`() = runTest {
+        val result = marvelApi.getHeroEvents(23062).data.results
+        assertEquals(5, result.size)
+    }
 }

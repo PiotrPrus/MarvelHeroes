@@ -22,6 +22,16 @@ fun createMarvelApiMockClient(): HttpClient {
                         HttpStatusCode.OK,
                         responseHeaders
                     )
+                    "/v1/public/characters/23062/comics" -> respond(
+                        TestUtils.readFile("iron_man_comics.json"),
+                        HttpStatusCode.OK,
+                        responseHeaders
+                    )
+                    "/v1/public/characters/23062/events" -> respond(
+                        TestUtils.readFile("iron_man_events.json"),
+                        HttpStatusCode.OK,
+                        responseHeaders
+                    )
                     else -> error("Unhandled ${request.url.encodedPath}")
                 }
             }
