@@ -1,0 +1,897 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2022 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2022 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2022 MARVEL</a>",
+  "etag": "e3999332d45e63f4d956e045a265a968da804320",
+  "data": {
+    "offset": 0,
+    "limit": 5,
+    "total": 2304,
+    "count": 5,
+    "results": [
+      {
+        "id": 23062,
+        "digitalId": 0,
+        "title": "Iron Man: War Machine (2008) #1",
+        "issueNumber": 1,
+        "variantDescription": "",
+        "description": null,
+        "modified": "-0001-11-30T00:00:00-0500",
+        "isbn": "",
+        "upc": "",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 0,
+        "textObjects": [],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/23062",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/23062/iron_man_war_machine_2008_1?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/4936",
+          "name": "Iron Man: War Machine (2008)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/4bb621c8693a7",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/70/4bb621c8693a7",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/23062/creators",
+          "items": [],
+          "returned": 0
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/23062/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+              "name": "Iron Man"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/23062/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/52612",
+              "name": "Cover #52612",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/52613",
+              "name": "Interior #52613",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/23062/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 17487,
+        "digitalId": 0,
+        "title": "X-Men: The Complete Onslaught Epic Vol. 4 (2009)",
+        "issueNumber": 0,
+        "variantDescription": "",
+        "description": null,
+        "modified": "2018-07-10T13:15:09-0400",
+        "isbn": "0-7851-2826-3",
+        "upc": "",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 0,
+        "textObjects": [],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/17487",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/17487/x-men_the_complete_onslaught_epic_vol_4_2009?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/3319",
+          "name": "X-Men: The Complete Onslaught Epic Vol. 4 (2009)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/c0/57dae7fc9caf2",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/2/c0/57dae7fc9caf2",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/17487/creators",
+          "items": [],
+          "returned": 0
+        },
+        "characters": {
+          "available": 31,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/17487/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009156",
+              "name": "Apocalypse"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009182",
+              "name": "Bishop"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009187",
+              "name": "Black Panther"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009189",
+              "name": "Black Widow"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009214",
+              "name": "Cable"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009219",
+              "name": "Cannonball"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009220",
+              "name": "Captain America"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009255",
+              "name": "Crystal"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009257",
+              "name": "Cyclops"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009281",
+              "name": "Doctor Doom"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009297",
+              "name": "Falcon"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009313",
+              "name": "Gambit"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009338",
+              "name": "Hawkeye"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009351",
+              "name": "Hulk"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009356",
+              "name": "Human Torch"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009362",
+              "name": "Iceman"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009366",
+              "name": "Invisible Woman"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+              "name": "Iron Man"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009380",
+              "name": "Joseph"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009459",
+              "name": "Mr. Fantastic"
+            }
+          ],
+          "returned": 20
+        },
+        "stories": {
+          "available": 3,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/17487/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/26051",
+              "name": "ONSLAUGHT: MARVEL UNIVERSE (1996) #1",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/26052",
+              "name": "With Great Power ...",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/67689",
+              "name": "X-MEN: THE COMPLETE ONSLAUGHT EPIC VOL. 4 TPB 0 cover",
+              "type": "cover"
+            }
+          ],
+          "returned": 3
+        },
+        "events": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/17487/events",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/events/154",
+              "name": "Onslaught"
+            }
+          ],
+          "returned": 1
+        }
+      },
+      {
+        "id": 11280,
+        "digitalId": 2589,
+        "title": "Tales of Suspense (1959) #39",
+        "issueNumber": 39,
+        "variantDescription": "",
+        "description": "Iron Man's first explosive appearance by Stan Lee and Jack Kirby. 'Nuff said. (Originally published as TALES OF SUSPENSE (1963) #39)",
+        "modified": "2017-08-16T15:33:03-0400",
+        "isbn": "",
+        "upc": "",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 0,
+        "textObjects": [
+          {
+            "type": "issue_preview_text",
+            "language": "en-us",
+            "text": "Iron Man's first explosive appearance by Stan Lee and Jack Kirby. 'Nuff said. (Originally published as TALES OF SUSPENSE (1963) #39)"
+          },
+          {
+            "type": "70th_winner_desc",
+            "language": "en-us",
+            "text": "Iron Man's first explosive appearance by Stan Lee and Jack Kirby. 'Nuff said."
+          },
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "In a war-torn land, Tony Stark builds the world's greatest warrior...around himself! The debut of Iron Man!"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/11280",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/11280/tales_of_suspense_1959_39?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "purchase",
+            "url": "http://comicstore.marvel.com/Tales-of-Suspense-39/digital-comic/2589?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=2589&utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "inAppLink",
+            "url": "https://applink.marvel.com/issue/2589?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/2079",
+          "name": "Tales of Suspense (1959 - 1968)"
+        },
+        "variants": [],
+        "collections": [
+          {
+            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17468",
+            "name": "Marvel Masterworks: The Invincible Iron Man Vol. 1 (Hardcover)"
+          }
+        ],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "1963-03-01T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2008-09-14T00:00:00-0400"
+          },
+          {
+            "type": "digitalPurchaseDate",
+            "date": "2010-05-27T00:00:00-0400"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          },
+          {
+            "type": "digitalPurchasePrice",
+            "price": 1.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/536d69b8ae3b4",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/b0/536d69b8ae3b4",
+            "extension": "jpg"
+          },
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/e0/519a9ddb880a9",
+            "extension": "jpg"
+          },
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/f0/4c9b85288a4ce",
+            "extension": "jpg"
+          },
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/a0/4bc3826f446cf",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 6,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11280/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/270",
+              "name": "Gene Colan",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/32",
+              "name": "Steve Ditko",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/305",
+              "name": "Don Heck",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/30",
+              "name": "Stan Lee",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/945",
+              "name": "Larry Lieber",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/13093",
+              "name": "Art Simek",
+              "role": "letterer"
+            }
+          ],
+          "returned": 6
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11280/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+              "name": "Iron Man"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 5,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11280/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11756",
+              "name": "Iron Man!",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11757",
+              "name": "Iron Man is Born",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11758",
+              "name": "The Last Rocket",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11759",
+              "name": "Gundar",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/178611",
+              "name": "story from Tales of Suspense (1959) #39",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 5
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11280/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 11282,
+        "digitalId": 2590,
+        "title": "Tales of Suspense (1959) #40",
+        "issueNumber": 40,
+        "variantDescription": "",
+        "description": "Gray goes gold when Tony Stark gives his armor a new look, just in time to face a prehistoric powerhouse! Iron Man vs. his first super-powered opponent!  (Originally published as TALES OF SUSPENSE (1963) #40)",
+        "modified": "2019-06-25T11:47:35-0400",
+        "isbn": "",
+        "upc": "",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 0,
+        "textObjects": [
+          {
+            "type": "issue_preview_text",
+            "language": "en-us",
+            "text": "Gray goes gold when Tony Stark gives his armor a new look, just in time to face a prehistoric powerhouse! Iron Man vs. his first super-powered opponent!  (Originally published as TALES OF SUSPENSE (1963) #40)"
+          },
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "Gray goes gold when Tony Stark gives his armor a new look, just in time to face a prehistoric powerhouse! Iron Man vs. his first super-powered opponent!"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/11282",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/11282/tales_of_suspense_1959_40?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "purchase",
+            "url": "http://comicstore.marvel.com/Tales-of-Suspense-40/digital-comic/2590?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=2590&utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "inAppLink",
+            "url": "https://applink.marvel.com/issue/2590?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/2079",
+          "name": "Tales of Suspense (1959 - 1968)"
+        },
+        "variants": [],
+        "collections": [
+          {
+            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17468",
+            "name": "Marvel Masterworks: The Invincible Iron Man Vol. 1 (Hardcover)"
+          }
+        ],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "1963-04-01T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2007-11-13T00:00:00-0500"
+          },
+          {
+            "type": "digitalPurchaseDate",
+            "date": "2010-05-20T00:00:00-0400"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          },
+          {
+            "type": "digitalPurchasePrice",
+            "price": 1.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/70/5e386ff0973e7",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/7/70/5e386ff0973e7",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 9,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11282/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1289",
+              "name": "Robert Bernstein",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/30",
+              "name": "Stan Lee",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1089",
+              "name": "Sol Brodsky",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/32",
+              "name": "Steve Ditko",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/305",
+              "name": "Don Heck",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/2625",
+              "name": "Jon Dagostino",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/13093",
+              "name": "Art Simek",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+              "name": "Jack Kirby",
+              "role": "penciller (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/945",
+              "name": "Larry Lieber",
+              "role": "penciler"
+            }
+          ],
+          "returned": 9
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11282/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+              "name": "Iron Man"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 6,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11282/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11766",
+              "name": "Cover #11766",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11767",
+              "name": "Iron Man versus Gargantus",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11768",
+              "name": "Work of Art",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11769",
+              "name": "Prophet of Doom",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/178612",
+              "name": "cover from Tales of Suspense (1959) #40",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/178613",
+              "name": "story from Tales of Suspense (1959) #40",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 6
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11282/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 11283,
+        "digitalId": 3476,
+        "title": "Tales of Suspense (1959) #41",
+        "issueNumber": 41,
+        "variantDescription": "",
+        "description": "The original Dr. Strange comes not to save the world, but to destroy it! Iron Man vs. one of the maddest scientists ever! (Originally published as TALES OF SUSPENSE (1963) #41)",
+        "modified": "2019-06-25T11:47:38-0400",
+        "isbn": "",
+        "upc": "",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 0,
+        "textObjects": [
+          {
+            "type": "issue_preview_text",
+            "language": "en-us",
+            "text": "The original Dr. Strange comes not to save the world, but to destroy it! Iron Man vs. one of the maddest scientists ever! (Originally published as TALES OF SUSPENSE (1963) #41)"
+          },
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "The original Dr. Strange comes not to save the world, but to destroy it! Iron Man vs. one of the maddest scientists ever!"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/11283",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/11283/tales_of_suspense_1959_41?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "purchase",
+            "url": "http://comicstore.marvel.com/Tales-of-Suspense-41/digital-comic/3476?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=3476&utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          },
+          {
+            "type": "inAppLink",
+            "url": "https://applink.marvel.com/issue/3476?utm_campaign=apiRef&utm_source=21c6c420412ac874af64f63f5aa77a7e"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/2079",
+          "name": "Tales of Suspense (1959 - 1968)"
+        },
+        "variants": [],
+        "collections": [
+          {
+            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17468",
+            "name": "Marvel Masterworks: The Invincible Iron Man Vol. 1 (Hardcover)"
+          }
+        ],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "1963-05-01T00:00:00-0400"
+          },
+          {
+            "type": "focDate",
+            "date": "-0001-11-30T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2007-11-13T00:00:00-0500"
+          },
+          {
+            "type": "digitalPurchaseDate",
+            "date": "2010-05-20T00:00:00-0400"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          },
+          {
+            "type": "digitalPurchasePrice",
+            "price": 1.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/4/50/5e387d7377d62",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/4/50/5e387d7377d62",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 8,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11283/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/263",
+              "name": "Dick Ayers",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1089",
+              "name": "Sol Brodsky",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/32",
+              "name": "Steve Ditko",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1289",
+              "name": "Robert Bernstein",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/30",
+              "name": "Stan Lee",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/196",
+              "name": "Jack Kirby",
+              "role": "penciller (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/945",
+              "name": "Larry Lieber",
+              "role": "penciler"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/13093",
+              "name": "Art Simek",
+              "role": "letterer"
+            }
+          ],
+          "returned": 8
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11283/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+              "name": "Iron Man"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 6,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11283/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11770",
+              "name": "Cover #11770",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11771",
+              "name": "The Stronghold of Dr. Strange",
+              "type": "interiorStory"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11772",
+              "name": "The Sorcerer's Plot",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/11773",
+              "name": "The End of the Universe",
+              "type": ""
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/178614",
+              "name": "cover from Tales of Suspense (1959) #41",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/178615",
+              "name": "story from Tales of Suspense (1959) #41",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 6
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/11283/events",
+          "items": [],
+          "returned": 0
+        }
+      }
+    ]
+  }
+}
