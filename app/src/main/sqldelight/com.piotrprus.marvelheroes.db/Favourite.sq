@@ -9,3 +9,15 @@ CREATE TABLE favourite(
     comics TEXT AS List<ThumbnailItem>,
     events TEXT AS List<ThumbnailItem>
 );
+
+selectAll:
+SELECT * FROM favourite;
+
+insertItem:
+INSERT OR REPLACE INTO favourite(hero_id, description, title, image_url, comics, events)VALUES(?,?,?,?, ?, ?);
+
+selectFavourite:
+SELECT * FROM favourite WHERE hero_id = ?;
+
+isStoredById:
+SELECT EXISTS (SELECT * FROM favourite WHERE hero_id = ?);
