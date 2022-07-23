@@ -2,12 +2,12 @@ import com.piotrprus.marvelheroes.data.model.ThumbnailItem;
 import kotlin.collections.List;
 
 CREATE TABLE favourite(
-    hero_id INTEGER PRIMARY KEY,
+    hero_id INTEGER AS Int PRIMARY KEY,
     description TEXT NOT NULL,
     title TEXT NOT NULL,
     image_url TEXT NOT NULL,
-    comics TEXT AS List<ThumbnailItem>,
-    events TEXT AS List<ThumbnailItem>
+    comics TEXT AS List<ThumbnailItem> NOT NULL,
+    events TEXT AS List<ThumbnailItem> NOT NULL
 );
 
 selectAll:
@@ -21,3 +21,6 @@ SELECT * FROM favourite WHERE hero_id = ?;
 
 isStoredById:
 SELECT EXISTS (SELECT * FROM favourite WHERE hero_id = ?);
+
+deleteFavourite:
+DELETE FROM favourite WHERE hero_id = ?;
