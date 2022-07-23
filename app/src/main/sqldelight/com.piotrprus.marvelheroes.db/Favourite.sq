@@ -1,0 +1,11 @@
+import com.piotrprus.marvelheroes.data.model.ThumbnailItem;
+import kotlin.collections.List;
+
+CREATE TABLE favourite(
+    hero_id INTEGER PRIMARY KEY,
+    description TEXT NOT NULL,
+    title TEXT NOT NULL,
+    image_url TEXT NOT NULL,
+    comics TEXT AS List<ThumbnailItem>,
+    events TEXT AS List<ThumbnailItem>
+);

@@ -90,6 +90,9 @@ dependencies {
     implementation(Deps.Koin.android)
     implementation(Deps.Koin.compose)
 
+    implementation(Deps.SqlDelight.android)
+    implementation(Deps.SqlDelight.coroutines)
+
     implementation(Deps.timber)
 
     androidTestImplementation(Deps.AndroidX.Test.junit)
