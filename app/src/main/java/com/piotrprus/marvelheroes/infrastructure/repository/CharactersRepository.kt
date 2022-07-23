@@ -42,7 +42,7 @@ interface CharactersRepository {
                 val results = marvelApi.getHeroComics(heroId).data.results
                 results.mapNotNull { comics ->
                     comics.thumbnail?.let { ThumbnailItem(id = comics.id, imageUrl = it.url) }
-                }
+                }.filterNot { it.imageUrl.contains("image_not_available") }
             }
 
         override suspend fun getEvents(heroId: Int): Result<List<ThumbnailItem>> =
@@ -50,7 +50,7 @@ interface CharactersRepository {
                 val results = marvelApi.getHeroEvents(heroId).data.results
                 results.mapNotNull { event ->
                     event.thumbnail?.let { ThumbnailItem(id = event.id, imageUrl = it.url) }
-                }
+                }.filterNot { it.imageUrl.contains("image_not_available") }
             }
     }
 }
