@@ -18,8 +18,8 @@ class HomeViewModel(
 
     companion object {
         val PAGING_CONFIG = PagingConfig(
-            pageSize = 20,
-            initialLoadSize = 40
+            pageSize = 50,
+            initialLoadSize = 100
         )
     }
 

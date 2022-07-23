@@ -5,14 +5,14 @@ import com.piotrprus.marvelheroes.data.model.CharacterItem
 import com.piotrprus.marvelheroes.data.model.ThumbnailItem
 
 interface CharactersRepository {
-    suspend fun fetchHeroes(offset: Int): List<CharacterItem>
+    suspend fun fetchHeroes(offset: Int, limit: Int): List<CharacterItem>
     suspend fun getDetail(heroId: Int): Result<CharacterItem>
     suspend fun getComics(heroId: Int): Result<List<ThumbnailItem>>
     suspend fun getEvents(heroId: Int): Result<List<ThumbnailItem>>
 
     class Impl(private val marvelApi: MarvelApi) : CharactersRepository {
-        override suspend fun fetchHeroes(offset: Int): List<CharacterItem> {
-            val response = marvelApi.getHeroes(offset = offset)
+        override suspend fun fetchHeroes(offset: Int, limit: Int): List<CharacterItem> {
+            val response = marvelApi.getHeroes(offset = offset, limit = limit)
             return response.data.results.map {
                 CharacterItem(
                     id = it.id,

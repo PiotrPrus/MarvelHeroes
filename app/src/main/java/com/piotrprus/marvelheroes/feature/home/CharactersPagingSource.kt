@@ -15,7 +15,7 @@ class CharactersSource(private val charactersRepository: CharactersRepository) :
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharacterItem> =
         try {
             val offset = params.key ?: 0
-            val list = charactersRepository.fetchHeroes(offset)
+            val list = charactersRepository.fetchHeroes(offset = offset, limit = params.loadSize)
             LoadResult.Page(
                 data = list,
                 prevKey = if (offset == 0) null else offset - params.loadSize,

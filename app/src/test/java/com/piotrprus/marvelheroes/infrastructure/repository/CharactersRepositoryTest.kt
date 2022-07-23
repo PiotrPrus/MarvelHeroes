@@ -17,7 +17,7 @@ class CharactersRepositoryTest {
 
     @Test
     fun `Check that 8th character is Abyss`() = runTest {
-        val char = repository.fetchHeroes(0)[7]
+        val char = repository.fetchHeroes(0, 20)[7]
         assertEquals("Abyss", char.name)
         assertTrue { char.imageUrl.takeLast(4) == ".jpg" }
         assertTrue { char.imageUrl.take(4) == "http" }
