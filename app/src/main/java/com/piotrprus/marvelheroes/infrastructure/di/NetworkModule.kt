@@ -54,7 +54,13 @@ fun createHttpClient(logger: Logger, json: Json) =
 private fun generateMD5(timestamp: String): String {
     val text =
         "$timestamp${BuildConfig.MARVEL_PRIVATE_KEY}${BuildConfig.MARVEL_API_KEY}"
-    val crypt = MessageDigest.getInstance("MD5")
-    crypt.update(text.toByteArray())
-    return BigInteger(1, crypt.digest()).toString(16)
+    val digest = MessageDigest.getInstance("MD5")
+    digest.update(text.toByteArray())
+    val messageDigest = digest.digest()
+    val bigInt = BigInteger(1, messageDigest)
+    var hashText = bigInt.toString(16)
+    while (hashText.length < 32) {
+        hashText = "0$hashText"
+    }
+    return hashText
 }
