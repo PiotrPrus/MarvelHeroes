@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.SubcomposeAsyncImage
@@ -23,9 +24,11 @@ import coil.request.ImageRequest
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.shimmer
 import com.google.accompanist.placeholder.placeholder
+import com.piotrprus.marvelheroes.R
 import com.piotrprus.marvelheroes.data.model.CharacterItem
 import com.piotrprus.marvelheroes.data.model.ThumbnailItem
 import com.piotrprus.marvelheroes.feature.detail.DetailViewModel
+import com.piotrprus.marvelheroes.ui.common.BoxPlaceholder
 
 @Composable
 fun DetailScreen(viewModel: DetailViewModel, navController: NavController) {
@@ -48,23 +51,69 @@ fun DetailScreen(viewModel: DetailViewModel, navController: NavController) {
                     hero = it,
                     isFavourite = state.isFavourite,
                     onFavClicked = { viewModel.onFavouriteClick() })
-            }
+            } ?: InfoPlaceholder()
             state.comics?.let {
                 ThumbnailReel(
-                    title = "Latest comics",
-                    emptyViewDescription = "There are no comics with this hero ☹️",
+                    title = stringResource(R.string.detail_comics_title),
+                    emptyViewDescription = stringResource(R.string.detail_comics_empty_message),
                     list = it
                 )
-            }
+            } ?: ThumbnailReelPlaceholder()
             state.events?.let {
                 ThumbnailReel(
-                    title = "Latest events",
-                    emptyViewDescription = "There are no events with this hero ☹️",
+                    title = stringResource(R.string.detail_events_title),
+                    emptyViewDescription = stringResource(R.string.detail_events_empty_message),
                     list = it
                 )
-            }
+            } ?: ThumbnailReelPlaceholder()
         }
     }
+}
+
+@Composable
+fun InfoPlaceholder() {
+    BoxPlaceholder(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+    )
+    Spacer(modifier = Modifier.height(16.dp))
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(50.dp), verticalAlignment = Alignment.CenterVertically
+    ) {
+        BoxPlaceholder(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.width(16.dp))
+        BoxPlaceholder(modifier = Modifier.size(40.dp))
+    }
+    Spacer(modifier = Modifier.height(16.dp))
+    BoxPlaceholder(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(16.dp)
+    )
+    Spacer(modifier = Modifier.height(16.dp))
+    BoxPlaceholder(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+    )
+}
+
+@Composable
+fun ThumbnailReelPlaceholder() {
+    BoxPlaceholder(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(16.dp)
+    )
+    Spacer(modifier = Modifier.height(16.dp))
+    BoxPlaceholder(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+    )
 }
 
 @Composable

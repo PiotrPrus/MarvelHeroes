@@ -4,4 +4,8 @@
     <string name="main_screen_favourites">Favourites</string>
     <string name="main_screen_search">Search</string>
     <string name="search_hint">Search for hero…</string>
+    <string name="detail_comics_title">Latest comics</string>
+    <string name="detail_events_title">Latest events</string>
+    <string name="detail_comics_empty_message">There are no comics with this hero ☹️</string>
+    <string name="detail_events_empty_message">There are no events with this hero ☹️</string>
 </resources>
