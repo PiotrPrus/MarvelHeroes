@@ -2,6 +2,7 @@ package com.piotrprus.marvelheroes.infrastructure.di
 
 import com.piotrprus.marvelheroes.db.HeroesDb
 import com.piotrprus.marvelheroes.feature.detail.DetailViewModel
+import com.piotrprus.marvelheroes.feature.favourite.FavouriteViewModel
 import com.piotrprus.marvelheroes.feature.home.HomeViewModel
 import com.piotrprus.marvelheroes.infrastructure.database.DbCustomAdapters
 import com.squareup.sqldelight.android.AndroidSqliteDriver
@@ -23,4 +24,5 @@ val androidModule = module {
             )
         )
     }
+    viewModel { FavouriteViewModel(get()) }
 }
