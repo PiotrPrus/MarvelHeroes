@@ -18,6 +18,7 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.piotrprus.marvelheroes.ui.FavouriteScreen
 import com.piotrprus.marvelheroes.ui.MainScreen
 import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.detail.DetailScreen
@@ -103,7 +104,7 @@ fun HeroesApp() {
                 startDestination = Screen.Favourites.createRoute(MainScreen.Favourites)
             ) {
                 composable(route = Screen.Favourites.createRoute(MainScreen.Favourites)) {
-                    Text(text = "Favourites screen")
+                    FavouriteScreen(viewModel = getViewModel(), navController = navController)
                 }
             }
             navigation(
