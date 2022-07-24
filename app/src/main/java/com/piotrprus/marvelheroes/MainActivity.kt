@@ -106,6 +106,18 @@ fun HeroesApp() {
                 composable(route = Screen.Favourites.createRoute(MainScreen.Favourites)) {
                     FavouriteScreen(viewModel = getViewModel(), navController = navController)
                 }
+                composable(
+                    route = Screen.HeroDetail.createRoute(MainScreen.Favourites),
+                    arguments = Screen.HeroDetail.arguments
+                ) { navBackStackEntry ->
+                    Screen.HeroDetail.parameters(navBackStackEntry.arguments)
+                        ?.let { parametersHolder ->
+                            DetailScreen(
+                                viewModel = getViewModel { parametersHolder },
+                                navController = navController
+                            )
+                        } ?: Timber.w("Cannot navigate to hero detail screen")
+                }
             }
             navigation(
                 route = MainScreen.Search.mainRoute,

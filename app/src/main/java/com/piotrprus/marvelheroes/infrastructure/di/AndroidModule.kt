@@ -13,7 +13,7 @@ import org.koin.dsl.module
 
 val androidModule = module {
     viewModel { HomeViewModel(get()) }
-    viewModel { params -> DetailViewModel(params.get(), get()) }
+    viewModel { params -> DetailViewModel(params.get(), get(), get()) }
     single<SqlDriver> { AndroidSqliteDriver(HeroesDb.Schema, get(), "Heroes.db") }
     single {
         HeroesDb(

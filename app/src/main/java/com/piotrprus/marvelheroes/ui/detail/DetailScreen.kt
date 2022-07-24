@@ -44,20 +44,31 @@ fun DetailScreen(viewModel: DetailViewModel, navController: NavController) {
                 .verticalScroll(scrollState)
         ) {
             state.info?.let {
-                HeroInfo(hero = it, isFavourite = state.isFavourite)
+                HeroInfo(
+                    hero = it,
+                    isFavourite = state.isFavourite,
+                    onFavClicked = { viewModel.onFavouriteClick() })
             }
             state.comics?.let {
-                ThumbnailReel(title = "Latest comics", emptyViewDescription = "There are no comics with this hero ☹️", list = it)
+                ThumbnailReel(
+                    title = "Latest comics",
+                    emptyViewDescription = "There are no comics with this hero ☹️",
+                    list = it
+                )
             }
             state.events?.let {
-                ThumbnailReel(title = "Latest events", emptyViewDescription = "There are no events with this hero ☹️", list = it)
+                ThumbnailReel(
+                    title = "Latest events",
+                    emptyViewDescription = "There are no events with this hero ☹️",
+                    list = it
+                )
             }
         }
     }
 }
 
 @Composable
-fun ColumnScope.HeroInfo(hero: CharacterItem, isFavourite: Boolean) {
+fun ColumnScope.HeroInfo(hero: CharacterItem, isFavourite: Boolean, onFavClicked: () -> Unit) {
     SubcomposeAsyncImage(
         modifier = Modifier
             .fillMaxWidth()
@@ -87,7 +98,7 @@ fun ColumnScope.HeroInfo(hero: CharacterItem, isFavourite: Boolean) {
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(text = hero.name, style = MaterialTheme.typography.h5, modifier = Modifier.weight(1f))
-        FloatingActionButton(onClick = { /*TODO*/ }) {
+        FloatingActionButton(onClick = { onFavClicked() }) {
             Icon(
                 imageVector = if (isFavourite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
                 contentDescription = "Favourite icon"
