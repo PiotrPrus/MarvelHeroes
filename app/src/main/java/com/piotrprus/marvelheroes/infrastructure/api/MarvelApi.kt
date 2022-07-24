@@ -15,6 +15,12 @@ class MarvelApi(private val httpClient: HttpClient) {
             parameter("offset", offset)
         }.body()
 
+    suspend fun getHeroes(startWith: String, limit: Int): CharactersResponse =
+        httpClient.get("v1/public/characters") {
+            parameter("limit", limit)
+            parameter("nameStartsWith", startWith)
+        }.body()
+
     suspend fun getHeroDetail(heroId: Int): CharactersResponse =
         httpClient.get("v1/public/characters/$heroId").body()
 

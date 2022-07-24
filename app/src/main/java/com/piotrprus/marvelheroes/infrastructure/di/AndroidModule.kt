@@ -4,6 +4,7 @@ import com.piotrprus.marvelheroes.db.HeroesDb
 import com.piotrprus.marvelheroes.feature.detail.DetailViewModel
 import com.piotrprus.marvelheroes.feature.favourite.FavouriteViewModel
 import com.piotrprus.marvelheroes.feature.home.HomeViewModel
+import com.piotrprus.marvelheroes.feature.search.SearchViewModel
 import com.piotrprus.marvelheroes.infrastructure.database.DbCustomAdapters
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
@@ -25,4 +26,5 @@ val androidModule = module {
         )
     }
     viewModel { FavouriteViewModel(get()) }
+    viewModel { SearchViewModel(get()) }
 }

@@ -9,10 +9,23 @@ interface CharactersRepository {
     suspend fun getDetail(heroId: Int): Result<CharacterItem>
     suspend fun getComics(heroId: Int): Result<List<ThumbnailItem>>
     suspend fun getEvents(heroId: Int): Result<List<ThumbnailItem>>
+    suspend fun fetchHeroes(startWith: String, limit: Int = 50): List<CharacterItem>
 
     class Impl(private val marvelApi: MarvelApi) : CharactersRepository {
         override suspend fun fetchHeroes(offset: Int, limit: Int): List<CharacterItem> {
             val response = marvelApi.getHeroes(offset = offset, limit = limit)
+            return response.data.results.map {
+                CharacterItem(
+                    id = it.id,
+                    name = it.name,
+                    imageUrl = it.thumbnail.url,
+                    description = it.description
+                )
+            }
+        }
+
+        override suspend fun fetchHeroes(startWith: String, limit: Int): List<CharacterItem> {
+            val response = marvelApi.getHeroes(startWith = startWith, limit = limit)
             return response.data.results.map {
                 CharacterItem(
                     id = it.id,
