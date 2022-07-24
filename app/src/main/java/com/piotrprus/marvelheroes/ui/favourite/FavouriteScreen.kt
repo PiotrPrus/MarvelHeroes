@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalFoundationApi::class)
 
-package com.piotrprus.marvelheroes.ui
+package com.piotrprus.marvelheroes.ui.favourite
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
@@ -20,6 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.piotrprus.marvelheroes.data.model.FavouriteItem
 import com.piotrprus.marvelheroes.feature.favourite.FavouriteViewModel
+import com.piotrprus.marvelheroes.ui.MainScreen
+import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.common.HeroCard
 
 @Composable

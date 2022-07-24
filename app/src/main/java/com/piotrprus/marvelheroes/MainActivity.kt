@@ -18,11 +18,12 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.piotrprus.marvelheroes.ui.FavouriteScreen
+import com.piotrprus.marvelheroes.ui.favourite.FavouriteScreen
 import com.piotrprus.marvelheroes.ui.MainScreen
 import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.detail.DetailScreen
 import com.piotrprus.marvelheroes.ui.home.HomeScreen
+import com.piotrprus.marvelheroes.ui.search.SearchScreen
 import com.piotrprus.marvelheroes.ui.theme.MarvelHeroesTheme
 import org.koin.androidx.compose.getViewModel
 import timber.log.Timber
@@ -124,7 +125,19 @@ fun HeroesApp() {
                 startDestination = Screen.Search.createRoute(MainScreen.Search)
             ) {
                 composable(route = Screen.Search.createRoute(MainScreen.Search)) {
-                    Text(text = "Search screen")
+                    SearchScreen(viewModel = getViewModel(), navController = navController)
+                }
+                composable(
+                    route = Screen.HeroDetail.createRoute(MainScreen.Search),
+                    arguments = Screen.HeroDetail.arguments
+                ) { navBackStackEntry ->
+                    Screen.HeroDetail.parameters(navBackStackEntry.arguments)
+                        ?.let { parametersHolder ->
+                            DetailScreen(
+                                viewModel = getViewModel { parametersHolder },
+                                navController = navController
+                            )
+                        } ?: Timber.w("Cannot navigate to hero detail screen")
                 }
             }
 

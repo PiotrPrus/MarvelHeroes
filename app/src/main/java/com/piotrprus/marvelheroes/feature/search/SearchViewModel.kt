@@ -19,8 +19,11 @@ class SearchViewModel(private val charactersRepository: CharactersRepository) : 
         viewModelScope.launch {
             searchQuery.debounce(300)
                 .onEach { query ->
-                    val results = charactersRepository.fetchHeroes(startWith = query)
-                    mutableState.update { it.copy(list = results) }
+                    if (query.isEmpty()) mutableState.update { it.copy(list = listOf()) }
+                    else {
+                        val results = charactersRepository.fetchHeroes(startWith = query)
+                        mutableState.update { it.copy(list = results) }
+                    }
                 }
                 .catch { throwable -> uiMessageManager.emitMessage(UiMessage(throwable)) }
                 .collect()
