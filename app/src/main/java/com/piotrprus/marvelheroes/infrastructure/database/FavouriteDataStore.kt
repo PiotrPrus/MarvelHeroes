@@ -4,14 +4,14 @@ import com.piotrprus.marvelheroes.data.model.CharacterItem
 import com.piotrprus.marvelheroes.data.model.FavouriteItem
 import com.piotrprus.marvelheroes.db.HeroesDb
 import com.squareup.sqldelight.runtime.coroutines.asFlow
+import com.squareup.sqldelight.runtime.coroutines.mapToList
 import com.squareup.sqldelight.runtime.coroutines.mapToOne
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 
 interface FavouriteDataStore {
     suspend fun addItem(item: FavouriteItem)
     suspend fun deleteItem(heroId: Int)
-    fun getAll(): Flow<FavouriteItem>
+    fun getAll(): Flow<List<FavouriteItem>>
     suspend fun getItem(heroId: Int): FavouriteItem
     fun isStored(heroId: Int): Flow<Boolean>
 
@@ -31,7 +31,7 @@ interface FavouriteDataStore {
             database.favouriteQueries.deleteFavourite(heroId)
         }
 
-        override fun getAll(): Flow<FavouriteItem> =
+        override fun getAll(): Flow<List<FavouriteItem>> =
             database.favouriteQueries.selectAll(mapper = { hero_id, description, title, image_url, comics, events ->
                 FavouriteItem(
                     CharacterItem(
@@ -41,7 +41,7 @@ interface FavouriteDataStore {
                         description = description
                     ), comics = comics, events = events
                 )
-            }).executeAsList().asFlow()
+            }).asFlow().mapToList()
 
         override suspend fun getItem(heroId: Int): FavouriteItem =
             database.favouriteQueries.selectFavourite(

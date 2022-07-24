@@ -103,6 +103,7 @@ dependencies {
     testImplementation(Deps.Koin.test)
     testImplementation(Deps.Ktor.mock)
     testImplementation(Deps.KotlinX.Coroutines.test)
+    testImplementation(Deps.SqlDelight.jvm)
 }
 
 sqldelight {
