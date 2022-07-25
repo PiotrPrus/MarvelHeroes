@@ -18,10 +18,10 @@ import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.navigation
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import com.piotrprus.marvelheroes.ui.favourite.FavouriteScreen
 import com.piotrprus.marvelheroes.ui.MainScreen
 import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.detail.DetailScreen
+import com.piotrprus.marvelheroes.ui.favourite.FavouriteScreen
 import com.piotrprus.marvelheroes.ui.home.HomeScreen
 import com.piotrprus.marvelheroes.ui.search.SearchScreen
 import com.piotrprus.marvelheroes.ui.theme.MarvelHeroesTheme
@@ -85,7 +85,11 @@ fun HeroesApp() {
                 startDestination = Screen.Home.createRoute(MainScreen.Home)
             ) {
                 composable(route = Screen.Home.createRoute(MainScreen.Home)) {
-                    HomeScreen(viewModel = getViewModel(), navController = navController)
+                    HomeScreen(viewModel = getViewModel()) { heroId ->
+                        navController.navigate(
+                            Screen.HeroDetail.createRoute(MainScreen.Home, heroId)
+                        )
+                    }
                 }
                 composable(
                     route = Screen.HeroDetail.createRoute(MainScreen.Home),
@@ -94,9 +98,9 @@ fun HeroesApp() {
                     Screen.HeroDetail.parameters(navBackStackEntry.arguments)
                         ?.let { parametersHolder ->
                             DetailScreen(
-                                viewModel = getViewModel { parametersHolder },
-                                navController = navController
-                            )
+                                viewModel = getViewModel { parametersHolder }) {
+                                navController.navigateUp()
+                            }
                         } ?: Timber.w("Cannot navigate to hero detail screen")
                 }
             }
@@ -105,7 +109,14 @@ fun HeroesApp() {
                 startDestination = Screen.Favourites.createRoute(MainScreen.Favourites)
             ) {
                 composable(route = Screen.Favourites.createRoute(MainScreen.Favourites)) {
-                    FavouriteScreen(viewModel = getViewModel(), navController = navController)
+                    FavouriteScreen(viewModel = getViewModel()) { heroId ->
+                        navController.navigate(
+                            Screen.HeroDetail.createRoute(
+                                MainScreen.Favourites,
+                                heroId
+                            )
+                        )
+                    }
                 }
                 composable(
                     route = Screen.HeroDetail.createRoute(MainScreen.Favourites),
@@ -114,9 +125,8 @@ fun HeroesApp() {
                     Screen.HeroDetail.parameters(navBackStackEntry.arguments)
                         ?.let { parametersHolder ->
                             DetailScreen(
-                                viewModel = getViewModel { parametersHolder },
-                                navController = navController
-                            )
+                                viewModel = getViewModel { parametersHolder }
+                            ) { navController.navigateUp() }
                         } ?: Timber.w("Cannot navigate to hero detail screen")
                 }
             }
@@ -125,7 +135,11 @@ fun HeroesApp() {
                 startDestination = Screen.Search.createRoute(MainScreen.Search)
             ) {
                 composable(route = Screen.Search.createRoute(MainScreen.Search)) {
-                    SearchScreen(viewModel = getViewModel(), navController = navController)
+                    SearchScreen(viewModel = getViewModel()) { heroId ->
+                        navController.navigate(
+                            Screen.HeroDetail.createRoute(MainScreen.Search, heroId)
+                        )
+                    }
                 }
                 composable(
                     route = Screen.HeroDetail.createRoute(MainScreen.Search),
@@ -134,9 +148,9 @@ fun HeroesApp() {
                     Screen.HeroDetail.parameters(navBackStackEntry.arguments)
                         ?.let { parametersHolder ->
                             DetailScreen(
-                                viewModel = getViewModel { parametersHolder },
-                                navController = navController
-                            )
+                                viewModel = getViewModel { parametersHolder }) {
+                                navController.navigateUp()
+                            }
                         } ?: Timber.w("Cannot navigate to hero detail screen")
                 }
             }

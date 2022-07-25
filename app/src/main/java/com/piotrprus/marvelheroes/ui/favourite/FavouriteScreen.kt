@@ -25,20 +25,14 @@ import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.common.HeroCard
 
 @Composable
-fun FavouriteScreen(viewModel: FavouriteViewModel, navController: NavController) {
+fun FavouriteScreen(viewModel: FavouriteViewModel, navigateToDetail: (Int) -> Unit) {
     when (val state = viewModel.state.collectAsState().value) {
         null -> InitialScreen()
         emptyList<FavouriteItem>() -> EmptyScreen()
         else -> FavouriteScreenContent(
             state,
-            onFavClick = { heroId ->
-                navController.navigate(
-                    Screen.HeroDetail.createRoute(
-                        MainScreen.Favourites,
-                        heroId
-                    )
-                )
-            })
+            onFavClick = { heroId -> navigateToDetail(heroId) }
+        )
     }
 }
 

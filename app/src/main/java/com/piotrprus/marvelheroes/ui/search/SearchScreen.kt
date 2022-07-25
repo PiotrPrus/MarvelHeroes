@@ -27,7 +27,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.google.accompanist.placeholder.PlaceholderHighlight
@@ -36,17 +35,9 @@ import com.google.accompanist.placeholder.placeholder
 import com.piotrprus.marvelheroes.R
 import com.piotrprus.marvelheroes.data.model.CharacterItem
 import com.piotrprus.marvelheroes.feature.search.SearchViewModel
-import com.piotrprus.marvelheroes.ui.MainScreen
-import com.piotrprus.marvelheroes.ui.Screen
 
 @Composable
-fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
-    fun navigateToDetail(heroId: Int) {
-        navController.navigate(
-            Screen.HeroDetail.createRoute(MainScreen.Search, heroId)
-        )
-    }
-
+fun SearchScreen(viewModel: SearchViewModel, navigateToDetail: (Int) -> Unit) {
     val state by viewModel.state.collectAsState()
     val scaffoldState = rememberScaffoldState()
 
@@ -121,7 +112,7 @@ fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
                         .animateItemPlacement()
                         .fillMaxWidth(),
                     hero = item,
-                    onItemClick = { navigateToDetail(heroId = it) })
+                    onItemClick = { navigateToDetail(it) })
             }
         }
     }

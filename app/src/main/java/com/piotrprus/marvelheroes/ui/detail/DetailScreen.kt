@@ -35,11 +35,11 @@ import com.piotrprus.marvelheroes.feature.detail.DetailViewModel
 import com.piotrprus.marvelheroes.ui.common.BoxPlaceholder
 
 @Composable
-fun DetailScreen(viewModel: DetailViewModel, navController: NavController) {
+fun DetailScreen(viewModel: DetailViewModel, navigateUp: () -> Unit) {
     val state = viewModel.state.collectAsState().value
     Scaffold(topBar = {
         TopAppBar(title = { Text(text = state.info?.name ?: "") }, navigationIcon = {
-            IconButton(onClick = { navController.navigateUp() }) {
+            IconButton(onClick = { navigateUp() }) {
                 Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Arrow back icon")
             }
         })

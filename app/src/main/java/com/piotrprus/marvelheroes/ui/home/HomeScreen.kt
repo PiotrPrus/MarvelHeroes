@@ -33,7 +33,7 @@ import com.piotrprus.marvelheroes.ui.common.prependErrorOrNull
 import com.piotrprus.marvelheroes.ui.common.refreshErrorOrNull
 
 @Composable
-fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
+fun HomeScreen(viewModel: HomeViewModel, navigateToDetail: (Int) -> Unit) {
     val lazyItems = viewModel.pagedList.collectAsLazyPagingItems()
     val scaffoldState = rememberScaffoldState()
 
@@ -98,9 +98,7 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                     .fillMaxWidth()
                 lazyItems[key]?.let {
                     HeroCard(modifier = cardModifier, hero = it, onClick = { heroId ->
-                        navController.navigate(
-                            Screen.HeroDetail.createRoute(MainScreen.Home, heroId)
-                        )
+                        navigateToDetail(heroId)
                     })
                 } ?: PlaceholderHeroCard(cardModifier)
             }
