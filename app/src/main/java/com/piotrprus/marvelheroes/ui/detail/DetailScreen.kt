@@ -1,5 +1,9 @@
 package com.piotrprus.marvelheroes.ui.detail
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -198,6 +202,7 @@ fun ColumnScope.ThumbnailReel(
         )
     } else {
         val scrollState = rememberScrollState()
+        val context = LocalContext.current
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -210,7 +215,13 @@ fun ColumnScope.ThumbnailReel(
             list.forEach { thumbnail ->
                 SubcomposeAsyncImage(
                     modifier = Modifier
-                        .height(200.dp),
+                        .height(200.dp)
+                        .clickable {
+                            if (thumbnail.detailUrl != null) openBrowser(
+                                context = context,
+                                link = thumbnail.detailUrl
+                            )
+                        },
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(thumbnail.imageUrl)
                         .crossfade(true)
@@ -232,4 +243,13 @@ fun ColumnScope.ThumbnailReel(
             }
         }
     }
+}
+
+private fun openBrowser(context: Context, link: String) {
+    context.startActivity(
+        Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse(link)
+        )
+    )
 }

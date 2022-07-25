@@ -16,5 +16,12 @@ data class ComicsResponseData(
 data class ComicsDTO(
     val id: Int,
     val title: String,
-    val thumbnail: ThumbnailDTO? = null
+    val thumbnail: ThumbnailDTO? = null,
+    val urls: List<UrlDTO>? = null
+)
+
+@kotlinx.serialization.Serializable
+data class UrlDTO(
+    val type: String,
+    val url: String
 )

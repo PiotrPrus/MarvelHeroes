@@ -16,5 +16,6 @@ data class EventsResponseData(
 data class EventDTO(
     val id: Int,
     val title: String,
-    val thumbnail: ThumbnailDTO? = null
+    val thumbnail: ThumbnailDTO? = null,
+    val urls: List<UrlDTO>? = null
 )
