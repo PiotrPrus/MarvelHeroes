@@ -5,13 +5,17 @@ package com.piotrprus.marvelheroes.ui.home
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.shimmer
@@ -44,6 +48,21 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                     )
                 })
             } ?: PlaceholderHeroCard(cardModifier)
+        }
+        if (lazyItems.loadState.append == LoadState.Loading) {
+            item(
+                key = null,
+                span = { GridItemSpan(maxLineSpan) },
+                contentType = null
+            ) {
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp)
+                ) {
+                    CircularProgressIndicator(Modifier.align(Alignment.Center))
+                }
+            }
         }
     }
 }
