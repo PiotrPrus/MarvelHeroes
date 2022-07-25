@@ -8,4 +8,5 @@
     <string name="detail_events_title">Latest events</string>
     <string name="detail_comics_empty_message">There are no comics with this hero ☹️</string>
     <string name="detail_events_empty_message">There are no events with this hero ☹️</string>
+    <string name="home_hero_preload">Super-heroes are coming…</string>
 </resources>
