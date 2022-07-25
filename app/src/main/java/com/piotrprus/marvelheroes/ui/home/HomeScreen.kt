@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
@@ -27,6 +28,9 @@ import com.piotrprus.marvelheroes.feature.home.HomeViewModel
 import com.piotrprus.marvelheroes.ui.MainScreen
 import com.piotrprus.marvelheroes.ui.Screen
 import com.piotrprus.marvelheroes.ui.common.HeroCard
+import com.piotrprus.marvelheroes.ui.common.appendErrorOrNull
+import com.piotrprus.marvelheroes.ui.common.prependErrorOrNull
+import com.piotrprus.marvelheroes.ui.common.refreshErrorOrNull
 
 @Composable
 fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
@@ -61,6 +65,23 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                 Text(text = stringResource(R.string.home_hero_preload))
             }
         }
+
+        lazyItems.loadState.prependErrorOrNull()?.let { message ->
+            LaunchedEffect(message) {
+                scaffoldState.snackbarHostState.showSnackbar(message.message)
+            }
+        }
+        lazyItems.loadState.appendErrorOrNull()?.let { message ->
+            LaunchedEffect(message) {
+                scaffoldState.snackbarHostState.showSnackbar(message.message)
+            }
+        }
+        lazyItems.loadState.refreshErrorOrNull()?.let { message ->
+            LaunchedEffect(message) {
+                scaffoldState.snackbarHostState.showSnackbar(message.message)
+            }
+        }
+
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
