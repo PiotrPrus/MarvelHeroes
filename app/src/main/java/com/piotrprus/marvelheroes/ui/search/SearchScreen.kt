@@ -1,10 +1,11 @@
-@file:OptIn(ExperimentalFoundationApi::class)
+@file:OptIn(ExperimentalFoundationApi::class, ExperimentalMaterialApi::class)
 
 package com.piotrprus.marvelheroes.ui.search
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,9 +16,12 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.Photo
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -61,7 +65,7 @@ fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
                 contentColor = MaterialTheme.colors.onSurface,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Box(
+                Column(
                     Modifier
                         .padding(horizontal = 16.dp, vertical = 8.dp)
                         .statusBarsPadding()
@@ -77,6 +81,22 @@ fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
                         hint = stringResource(id = R.string.search_hint),
                         modifier = Modifier.fillMaxWidth()
                     )
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(text = stringResource(R.string.search_filter_leading))
+                        HeroFilterChips(
+                            selected = state.descriptionFilter,
+                            onCLick = { viewModel.descriptionFilterClick() },
+                            leadingIcon = Icons.Default.Description,
+                            text = stringResource(R.string.search_filter_description)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        HeroFilterChips(
+                            selected = state.photoFilter,
+                            onCLick = { viewModel.photoFilterClick() },
+                            leadingIcon = Icons.Default.Photo,
+                            text = stringResource(R.string.search_filter_photo)
+                        )
+                    }
                 }
             }
         },
@@ -104,6 +124,31 @@ fun SearchScreen(viewModel: SearchViewModel, navController: NavController) {
                     onItemClick = { navigateToDetail(heroId = it) })
             }
         }
+    }
+}
+
+@Composable
+private fun HeroFilterChips(
+    selected: Boolean,
+    onCLick: () -> Unit,
+    leadingIcon: ImageVector,
+    text: String
+) {
+    FilterChip(
+        modifier = Modifier.padding(4.dp),
+        border = BorderStroke(
+            width = 1.dp,
+            color = MaterialTheme.colors.onSurface
+        ),
+        selected = selected,
+        onClick = onCLick,
+        leadingIcon = {
+            Icon(
+                imageVector = leadingIcon,
+                contentDescription = null
+            )
+        }) {
+        Text(text = text)
     }
 }
 

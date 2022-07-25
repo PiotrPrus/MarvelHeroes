@@ -9,4 +9,7 @@
     <string name="detail_comics_empty_message">There are no comics with this hero ☹️</string>
     <string name="detail_events_empty_message">There are no events with this hero ☹️</string>
     <string name="home_hero_preload">Super-heroes are coming…</string>
+    <string name="search_filter_description">Description</string>
+    <string name="search_filter_photo">Photo</string>
+    <string name="search_filter_leading">Hero contains: </string>
 </resources>
